@@ -24,6 +24,7 @@ func (strDB *StrDB) PostDataFromUsersAPI() {
 	}
 
 	stringBody := string(body)
+	fmt.Println(stringBody)
 
 	if error := json.Unmarshal([]byte(stringBody), &user); error != nil {
 		fmt.Println("Error ", error.Error())
@@ -36,6 +37,6 @@ func (strDB *StrDB) PostDataFromUsersAPI() {
 func (strDB *StrDB) GetUsersData() {
 	var user models.Users
 
-	result := strDB.DB.First(&user)
-	fmt.Println(result)
+	strDB.DB.Find(&user)
+	fmt.Println(user)
 }

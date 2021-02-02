@@ -36,6 +36,6 @@ func (strDB *StrDB) PostDataFromDogsAPI() {
 func (strDB *StrDB) GetDogsData() {
 	var dog models.Dogs
 
-	result := strDB.DB.First(&dog)
-	fmt.Println(result)
+	strDB.DB.First(&dog)
+	fmt.Println(dog)
 }

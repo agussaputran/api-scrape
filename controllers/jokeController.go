@@ -36,6 +36,6 @@ func (strDB *StrDB) PostDataFromJokesAPI() {
 func (strDB *StrDB) GetJokesData() {
 	var joke models.Jokes
 
-	result := strDB.DB.First(&joke)
-	fmt.Println(result)
+	strDB.DB.First(&joke)
+	fmt.Println(joke)
 }
